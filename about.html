@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Felicia's Code & Chronicles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48cae4, #b8e6b8);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .tagline {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-style: italic;
+            border-left: 4px solid #ff6b6b;
+            padding-left: 1.5rem;
+            background: #fff8f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #feca57;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid;
+            transition: transform 0.2s ease;
+        }
+
+        .project:nth-child(1) { border-left-color: #ff6b6b; }
+        .project:nth-child(2) { border-left-color: #feca57; }
+        .project:nth-child(3) { border-left-color: #48cae4; }
+        .project:nth-child(4) { border-left-color: #b8e6b8; }
+
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #2c3e50;
+        }
+
+        .project p {
+            font-size: 1rem;
+            margin: 0;
+            color: #666;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            font-weight: 500;
+            color: #2d3436;
+            font-style: italic;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .skill:nth-child(odd) {
+            border-color: #ff6b6b;
+        }
+
+        .skill:nth-child(even) {
+            border-color: #48cae4;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px dashed #dee2e6;
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .header {
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .profile-pic-placeholder {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="profile-pic-placeholder">
+                    <!-- Profile Image Placeholder -->
+                    <!-- Recommended size: 200x200px -->
+                    <!-- Replace with: -->
+                    <!-- <img src="your-photo.jpg" alt="Felicia" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"> -->
+                    📸 Your Photo<br>
+                    <small>200×200px</small>
+                </div>
+                <h1>Hey, I'm Building Something Cool 🚀</h1>
+                <div class="tagline">Currently debugging life, one line of code at a time</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                Welcome to my corner of the internet where I document my journey from special education teacher to full-stack software developer. This isn't just another career change story – it's about leveraging a decade of complex problem-solving, data management, and helping people overcome challenges to build technology that actually matters.
+            </div>
+
+            <div class="section">
+                <h2>What I'm Up To Right Now</h2>
+                <p>
+                    Gearing up to start #100Devs bootcamp in July - taking time now to wrap up some personal projects so I can dive in completely focused. Also diving into Python to create some wild animations (because why not make learning fun?), with plans to integrate these new skills directly into my classroom.
+                </p>
+                <div class="highlight">
+                    I'm constantly finding ways to bridge what I'm learning in tech with real-world applications for my students - it's like having a built-in testing ground for accessibility and user experience.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Current Projects in the Works</h2>
+                <div class="projects">
+                    <div class="project">
+                        <h3>🌍 Global Nomads</h3>
+                        <p>A full-stack travel documentation app chronicling my teaching adventures in Saudi Arabia and Korea (because someone needs to prove these stories actually happened)</p>
+                    </div>
+                    
+                    <div class="project">
+                        <h3>💫 Black Barbie Chronicles</h3>
+                        <p>Turning my book into a digital experience to practice new skills while sharing stories that matter</p>
+                    </div>
+                    
+                    <div class="project">
+                        <h3>🎨 Python Animation Playground</h3>
+                        <p>Various projects exploring creative coding - from data visualizations to interactive educational tools</p>
+                    </div>
+                    
+                    <div class="project">
+                        <h3>🎯 SpecialEd Sync</h3>
+                        <p>My ambitious 2026 vision - an integrated learning and IEP management suite that'll make special education tech actually work for teachers (not against them)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>The Daily Grind</h2>
+                <p>
+                    I blog about the intersection of education, technology, and the messy middle of career transitions. You'll find thoughts on accessibility in tech (because if it doesn't work for everyone, it doesn't really work), the surprising parallels between debugging code and troubleshooting student challenges, and honest takes on learning to code while managing the chaos of special education.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>What Drives Me</h2>
+                <p>
+                    Ten years of making technology work for students with diverse needs taught me that the best solutions aren't just functional – they're intuitive, inclusive, and built with real user empathy. Now I'm channeling that perspective into web development, bringing fresh eyes to problems that might seem routine to others.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Beyond the Screen</h2>
+                <p>
+                    When I'm not coding or wrangling IEP databases, I'm probably exploring Houston's food scene, planning my next international adventure, or finding new ways to make complex concepts click for people (old habits from teaching die hard).
+                </p>
+                
+                <div class="highlight">
+                    This site is where I share what I'm building, what I'm learning, and the unfiltered reality of transforming years of educational expertise into tech skills. Stick around – it's going to be an interesting ride.
+                </div>
+            </div>
+
+            <div class="skills">
+                <span class="skill">Full-Stack Development</span>
+                <span class="skill">Special Education</span>
+                <span class="skill">Python Animations</span>
+                <span class="skill">Accessibility</span>
+                <span class="skill">EdTech</span>
+                <span class="skill">Houston Explorer</span>
+                <span class="skill">#100Devs</span>
+                <span class="skill">Travel Stories</span>
+            </div>
+
+            <div class="footer-note">
+                Always a work in progress, just like me ✨
+            </div>
+        </div>
+    </div>
+</body>
+</html>
