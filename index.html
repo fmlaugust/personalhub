@@ -3,183 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felicia's Code & Chronicles</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="interactive-styles.css">
+    <title>Blog - Felicia's Code & Chronicles</title>
     <style>
-        /* Additional styles for the navigation */
-        .actual-nav {
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48cae4, #b8e6b8);
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            list-style: none;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        
-        .nav-links a {
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48cae4, #b8e6b8);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav a {
+            color: #666;
+            text-decoration: none;
+            margin-right: 1rem;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-post {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid;
+            transition: transform 0.2s ease;
+        }
+
+        .blog-post:nth-child(1) { border-left-color: #ff6b6b; }
+        .blog-post:nth-child(2) { border-left-color: #feca57; }
+        .blog-post:nth-child(3) { border-left-color: #48cae4; }
+        .blog-post:nth-child(4) { border-left-color: #b8e6b8; }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-post h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .blog-post .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #ff6b6b;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
         }
-        
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        .read-more:hover {
+            text-decoration: underline;
         }
-        
+
+        .coming-soon {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .coming-soon h2 {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
+            body {
+                padding: 1rem 0.5rem;
             }
             
-            .nav-links a {
-                font-size: 1rem;
-                padding: 0.4rem 0.8rem;
+            .header {
+                padding: 1.5rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Felicia's Code & Chronicles</h1>
-        
-        <!-- Real Navigation -->
-        <nav class="actual-nav">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog/index.html">Blog</a></li>
-                <li><a href="projects/index.html">Projects</a></li>
-                <li><a href="korea-stories/index.html">Korea Stories</a></li>
-                <li><a href="current-teaching/index.html">Current Teaching</a></li>
-                <li><a href="100devs/index.html">#100devs Journey</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+        <div class="header">
+            <h1>📝 The Blog</h1>
+            <p>Thoughts from the intersection of education, code, and life</p>
+        </div>
+
+        <nav class="nav">
+            <a href="../index.html">← Back to Home</a>
+            <a href="../projects/index.html">Projects</a>
+            <a href="../korea-stories/index.html">Korea Stories</a>
+            <a href="../100devs/index.html">#100devs</a>
+            <a href="../about.html">About</a>
         </nav>
-        
-        <div class="wireframe-section">
-            <div class="section-header">
-                <h2>Personal Creative Hub</h2>
-                <p>Your playground for experiments, growth & authentic voice</p>
-            </div>
-            
-            <div class="wireframe-content">
-                <div class="layout-visual">
-                    <div class="layout-block nav-block">
-                        CREATIVE HEADER & NAVIGATION ✅ UPDATED WITH CORRECT PATHS!
-                        <br><small>Home | Blog | Projects | Korea Stories | Current Teaching | #100devs Journey | About</small>
-                    </div>
-                    
-                    <div class="layout-block hero-block">
-                        ANIMATED HERO SECTION
-                        <br><small>Fun tagline | Personal photo | Animated elements | "Currently learning..."</small>
-                    </div>
-                    
-                    <div class="two-col">
-                        <div class="layout-block blog-block">
-                            LATEST BLOG POSTS
-                            <br><small>#100devs updates | Coding breakthroughs | Travel memories</small>
-                        </div>
-                        <div class="layout-block sidebar-block">
-                            PERSONAL SIDEBAR
-                            <br><small>Current mood | Now playing | Fun facts | Social links</small>
-                        </div>
-                    </div>
-                    
-                    <div class="layout-block content-block">
-                        WORK IN PROGRESS SHOWCASE
-                        <br><small>"What I'm building now" | Screenshots | Code snippets | Process</small>
-                    </div>
-                    
-                    <div class="two-col">
-                        <div class="layout-block content-block">
-                            TRAVEL CHRONICLES
-                            <br><small>Teaching stories | Food adventures | Cultural moments | Photos</small>
-                        </div>
-                        <div class="layout-block content-block">
-                            CODING JOURNEY
-                            <br><small>#100devs milestones | Challenges & wins | Learning resources</small>
-                        </div>
-                    </div>
-                    
-                    <div class="layout-block content-block">
-                        CREATIVE EXPERIMENTS
-                        <br><small>CSS art | JavaScript toys | Design challenges | Failed attempts</small>
-                    </div>
-                    
-                    <div class="layout-block footer-block">
-                        CREATIVE FOOTER
-                        <br><small>"Always a work in progress" | Personal social links | Random quote</small>
-                    </div>
-                </div>
-                
-                <div class="notes">
-                    <h4>Personal Site Vibe:</h4>
-                    <ul>
-                        <li>Colorful, expressive design reflecting your personality</li>
-                        <li>Show works in progress, learning process, and experiments</li>
-                        <li>Blog about your #100devs journey and coding challenges</li>
-                        <li>Include personal stories from Korea/Saudi teaching experiences</li>
-                        <li>Add interactive elements, animations, and creative touches</li>
-                        <li>Less formal tone - authentic voice and personality shine</li>
-                        <li>Space to grow and evolve as you learn new things</li>
-                    </ul>
-                </div>
-                
-                <div class="wireframe-box">
-                    <h3>Content Ideas</h3>
-                    <ul>
-                        <li><strong>Hero:</strong> "Currently debugging life, one line of code at a time 🌸"</li>
-                        <li><strong>Blog:</strong> "Day 0 of #100devs: Taking the Plunge!!!"</li>
-                        <li><strong>Korea Stories:</strong> "That time I taught Korean kids about HTML"</li>
-                        <li><strong>Current Teaching:</strong> "Adventures in Saudi classrooms"</li>
-                        <li><strong>WIP Section:</strong> Screenshots with honest captions about struggles</li>
-                    </ul>
-                </div>
-                
-                <div class="wireframe-box">
-                    <h3>Creative Features</h3>
-                    <ul>
-                        <li>Animated CSS elements (floating icons, gradient backgrounds)</li>
-                        <li>Interactive hover effects and micro-animations</li>
-                        <li>Personal photo gallery from travels</li>
-                        <li>Progress bars for #100devs journey</li>
-                        <li>Random quotes or daily affirmations</li>
-                        <li>Comment sections or guestbook</li>
-                        <li>Dark/light mode toggle</li>
-                    </ul>
-                </div>
-                
-                <div class="wireframe-box">
-                    <h3>Technical Playground</h3>
-                    <ul>
-                        <li>Experiment with CSS Grid and Flexbox layouts</li>
-                        <li>Try CSS animations and transitions</li>
-                        <li>Practice JavaScript DOM manipulation</li>
-                        <li>Test different color schemes and typography</li>
-                        <li>Mobile-first but with creative desktop enhancements</li>
-                        <li>Use this site to try new techniques you're learning</li>
-                    </ul>
-                </div>
-            </div>
+
+        <div class="blog-grid">
+            <article class="blog-post">
+                <h3>🚀 Day 0 of #100devs: Taking the Plunge!</h3>
+                <div class="date">Coming July 2025</div>
+                <p>The moment I've been building toward - officially starting the #100devs bootcamp journey. Here's what I'm bringing to the table and what I'm hoping to learn...</p>
+                <a href="day-0-100devs.html" class="read-more">Read More →</a>
+            </article>
+
+            <article class="blog-post">
+                <h3>🐛 Currently Debugging Life, One Line at a Time</h3>
+                <div class="date">June 2025</div>
+                <p>What I've learned about problem-solving from ten years in special education and how it's preparing me for coding challenges. Spoiler: debugging code isn't that different from troubleshooting IEP goals...</p>
+                <a href="debugging-life.html" class="read-more">Read More →</a>
+            </article>
+
+            <article class="blog-post">
+                <h3>🇰🇷 That Time I Taught Korean Kids About HTML</h3>
+                <div class="date">May 2025</div>
+                <p>Bridging my teaching experience with my coding journey - turns out explaining div tags to 12-year-olds in Seoul taught me more about web development than I realized...</p>
+                <a href="korea-coding-stories.html" class="read-more">Read More →</a>
+            </article>
+        </div>
+
+        <div class="coming-soon">
+            <h2>More Posts Coming Soon!</h2>
+            <p>This blog is where I'll document the messy, honest reality of learning to code while managing the beautiful chaos of special education. Stay tuned for more adventures! ✨</p>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
